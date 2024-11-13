@@ -1,63 +1,76 @@
 .integrations-section {
-    background: linear-gradient(180deg, #1d1d1d, #333);
+    background: #111;
     color: #fff;
     padding: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.integrations-content {
-    text-align: center;
-    max-width: 800px;
 }
 
 .title h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 3.052rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .title p {
-    margin-bottom: 2rem;
     color: #aaa;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.integrate-button {
-    padding: 0.75rem 1.5rem;
-    background-color: #ffc107;
-    border: none;
-    color: #1d1d1d;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.features {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.integrate-button:hover {
-    background-color: #e0a806;
-}
-
-.icons-grid {
+.features > div {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 4rem;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "content image";
+    min-height: 80vh;
 }
 
-.icon-container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+.features > div:nth-child(odd) {
+    grid-template-areas: "image content";
+}
+
+.features > div .content {
+    grid-area: content;
+}
+
+.features > div .image {
+    grid-area: image;
+}
+
+.features > div .content small {
+    font-size: 0.8rem;
+}
+
+.features > div .content h3 {
+    padding-top: 1rem;
+    font-size: 2.441rem;
+    line-height: 1;
+}
+
+.features > div .content p {
+    font-size: 1rem;
+    padding: 2rem 0;
+}
+
+.features > div .content button {
+    margin-bottom: 2rem;
+    padding: .5rem 1rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    color: #ffc107;
-    transition: transform 0.2s;
+    gap: .5rem;
+    border-radius: .2rem;
+    outline: none;
+    border: none;
 }
 
-.icon {
-    font-size: 2rem;
+.features > div .image{
+    background: #fff;
+    width: 100%;
+    height: 100%;
 }

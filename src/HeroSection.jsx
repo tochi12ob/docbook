@@ -5,6 +5,7 @@ import './HeroSection.css'
 function HeroSection() {
   return (
     <section className="hero-section">
+      <div class="background"></div>
       <img src={logo} alt="Logo" className="hero-logo" />
       <h1>Product documentation your users will love</h1>
       <p>

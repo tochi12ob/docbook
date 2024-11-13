@@ -166,7 +166,7 @@ const SignUpPage = () => {
                     <br />
                     <p>
                         Already have an account?{' '}
-                        <RouteLink to="/logInPage" className="loginLink">
+                        <RouteLink to="/login" className="loginLink">
                             Login
                         </RouteLink>
                     </p>

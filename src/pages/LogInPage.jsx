@@ -116,7 +116,7 @@ const LogInPage = () => {
                         </svg>
                     </button>
                     <br />
-                    <p>Don't have an account?   <RouteLink to="/signUpPage" className="loginLink">SignUp</RouteLink></p>
+                    <p>Don't have an account?   <RouteLink to="/signup" className="loginLink">SignUp</RouteLink></p>
                 </form>
                 <Toaster position="top-center" reverseOrder={false} />
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './assets/logo.jpeg';
 import './Header.css';
+import { IoIosArrowDown } from 'react-icons/io';
 
 function Header() {
   const [dropdown, setDropdown] = useState(null);
@@ -14,8 +15,9 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src={logo} alt="Logo" />
-        <span className="product-name">DocBook</span>
+        <Link to={"/"} >
+          <img src={logo} alt="Logo" />
+        </Link>
       </div>
       <nav>
         <ul className="nav-links">
@@ -28,7 +30,7 @@ function Header() {
               <a href="#">
                 {item} 
                 <span className={`dropdown-arrow ${dropdown === item ? 'active' : ''}`}>
-                  ^
+                  <IoIosArrowDown/>
                 </span>
               </a>
               {dropdown === item && (

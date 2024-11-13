@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './Testimonials.css';
 import img1 from "./assets/profile-img1.jpg"
+import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 
 const testimonials = [
     {
@@ -10,14 +11,17 @@ const testimonials = [
         author: "Tochi"
     },
     {
+        img: img1,
         text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore voluptate minima delectus ipsa repudiandae adipisci nihil cupiditate impedit error. Cum.",
         author: "Collins"
     },
     {
+        img: img1,
         text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi doloribus id aperiam ipsa tempore fugiat quod veniam exercitationem eum inventore incidunt iusto, nemo facere iure sint quam optio. Optio, totam.",
         author: "Osaro"
     },
     {
+        img: img1,
         text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt iure perspiciatis ab blanditiis at accusamus illo in repudiandae dolore, doloremque suscipit eaque nihil hic perferendis placeat sed exercitationem vitae iusto expedita laudantium labore error tempora? Obcaecati quia deserunt excepturi magni.",
         author: "David"
     },
@@ -35,9 +39,10 @@ const Testimony = () => {
     }
   return (
     <section className="testimonials-section">
+      <h1 className='testimonial-header'>What our users think</h1>
       <div className="main-testimonial">
         <div className="testimonial-content">
-          <img src={testimonials[currentindex].img} alt={testimonials[currentindex].author} className="testimonial-image" />
+          <img src={testimonials[currentindex].img} alt={testimonials[currentindex].author} className="testimonial-image" width={60}/>
           <p>
             <div>
                 <h1>{testimonials[currentindex].text}</h1>
@@ -46,12 +51,12 @@ const Testimony = () => {
           <h4 className="testimonial-author">{testimonials[currentindex].author}</h4>
         </div>
         <div className="testimonial-nav">
-          <button onClick={prev}>&larr;</button>
-          <button onClick={next}>&rarr;</button>
+          <button onClick={prev}><IoArrowBack size={30}/></button>
+          <button onClick={next}><IoArrowForward size={30}/></button>
         </div>
       </div>
 
-      <div className="grid-testimonials">
+      {/* <div className="grid-testimonials">
         <div className="grid-item">
           <img src="https://via.placeholder.com/60" alt="Chidera" className="grid-image" />
           <p>
@@ -99,7 +104,7 @@ const Testimony = () => {
           </p>
           <span>Yanni</span>
         </div>
-      </div>
+      </div> */}
 
       <div className="cta-section">
         <h2>Get started for free</h2>

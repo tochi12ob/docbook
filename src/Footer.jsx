@@ -45,7 +45,6 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-bottom">
-                <div className="footer-logo">DOCBOOK</div>
                 <div className="footer-social">
                     <a href="#">GitHub</a>
                     <a href="#">LinkedIn</a>
@@ -55,6 +54,7 @@ const Footer = () => {
                     © 2024 COPYRIGHT DOCBOOK  ALL RIGHTS RESERVED.
                 </div>
             </div>
+            <div className="footer-logo">DOCBOOK</div>
         </footer>
     );
 };
