@@ -35,20 +35,13 @@ const SideBar = () => {
                             <path d="M9.657 14.341c-.846-.387-1.778-.536-2.766-.536-2.437 0-4.786 1.211-5.374 3.572-.077.312.118.62.44.62h5.262"></path>
                         </svg>
 
-                        <h2>{userDetails.organisationUserName}</h2>
+                        <h2>{userDetails.organisationUserName || "Tochi Obuzor"}</h2>
 
                     </div>
 
                     <br />
 
-                    <button type='button' className={"sideSearchButton"}>
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.364 3a7.364 7.364 0 1 0 0 14.727 7.364 7.364 0 0 0 0-14.727v0Z"></path>
-                            <path d="M15.857 15.86 21 21.001"></path>
-                        </svg>
-
-                        search Documentations
-                    </button>
+                    <input type="text" placeholder='Search documentation' className='searchDocumentation'/>
 
                     <br />
 

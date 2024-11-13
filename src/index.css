@@ -56,12 +56,16 @@ body {
   }
 
   .signUpPageContainer form input{
-    padding: .5rem;
+    padding: .7rem;
     margin-top: .4rem;
+    border: none;
+    outline: none;
+    border: 1px solid #111;
+    border-radius: 4px;
   }
 
   .signUpPageContainer form button{
-    padding: .5rem 0;
+    padding: .7rem 0;
     border: none;
     outline: none;
     background-color: #111;
@@ -76,4 +80,117 @@ body {
     justify-content: center;
   }
 
+  .dashboardContainer{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    background-color: #f5f5f4;
+  }
+
+  .dashboardSideBar{
+    height: 100vh;
+    padding: 1rem;
+    /* background-color: #d6d3d1; */
+  }
+
+  .document-section{
+    background: #fff;
+    padding: 2rem;
+  }
+
+  .document-section .card-content h1{
+    padding-bottom: 1rem;
+  }
+
+  .document-title{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .document-title input{
+    margin: .5rem 0 1rem 0;
+    padding: .5rem;
+    width: 50%;
+    border: none;
+    outline: none;
+    border: 1px solid #111;
+    border-radius: 4px;
+  }
+
+  .add-page-button{
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    border: none;
+    background: #111;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: .8rem;
+  }
+
+  .card-content .top-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .textarea-content{
+    width: 50%;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+  }
+
+  .image-upload h3{
+    padding-bottom: 1rem;
+  }
   
+  .save-controls{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .save-controls label{
+    padding: 1rem 0;
+  }
+
+  .save-controls button{
+    display: flex;
+    gap: .2rem;
+    max-width: 200px;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #111;
+    color: #fff;
+    font-size: .8rem;
+  }
+
+  .dashboardSideBar .sidebarTopHalf .organisationDetailsDisplay{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  .dashboardSideBar .sidebarTopHalf .organisationDetailsDisplay h2{
+    font-size: 1rem;
+  }
+
+  .dashboardSideBar .sidebarTopHalf .searchDocumentation{
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+  .logOutButton{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }

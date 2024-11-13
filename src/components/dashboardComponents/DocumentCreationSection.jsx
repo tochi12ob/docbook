@@ -148,6 +148,12 @@ const DocumentCreationSection = () => {
     <div className="document-section">
     <Card className="card">
       <CardContent className="card-content">
+        <div className='top-bar'>
+          <h1>Create Documentation</h1>
+          <button onClick={addNewPage} className="add-page-button">
+            <Plus size={16} /> Add Page
+          </button>
+        </div>
         <div className="document-title">
           <label className="label">Document Title</label>
           <input
@@ -170,9 +176,6 @@ const DocumentCreationSection = () => {
                 {page.title}
               </div>
             ))}
-            <button onClick={addNewPage} className="add-page-button">
-              <Plus size={16} /> Add Page
-            </button>
           </div>
 
           <div className="page-content">
@@ -198,9 +201,11 @@ const DocumentCreationSection = () => {
               onChange={(e) => handlePageContentChange(activePageIndex, e.target.value)}
               className="textarea-content"
               placeholder="Enter page content..."
+              rows={10}
             />
 
             <div className="image-upload">
+              <h3>Add image</h3>
               <input
                 type="file"
                 ref={fileInputRef}
