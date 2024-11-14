@@ -6,7 +6,7 @@ const DashBoardPage = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <section className={"dashboardContainer"}>
         <SideBar />
         <DocumentCreationSection/>

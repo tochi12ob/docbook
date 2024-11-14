@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Link as RouteLink, useNavigate } from 'react-router-dom';
-import LoginPage from "./LogInPage.jsx"
 import toast, { Toaster } from "react-hot-toast";
-
 
 const SignUpPage = () => {
     // State to manage form values and loading status
     const [signUpFormData, setsignUpFormData] = useState({
-        organisationUserName: '',
+        organisationName: '',
         userName: '',
         email: '',
         password: '',
@@ -15,7 +13,7 @@ const SignUpPage = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     // Handle input changes
     const handleInputValueChange = (event) => {
@@ -29,68 +27,57 @@ const SignUpPage = () => {
 
         // Basic password confirmation check
         if (signUpFormData.password !== signUpFormData.confirmPassword) {
-            
-            toast.error("Passwords no do not match,  Try again", {
+            toast.error("Passwords do not match. Try again", {
                 style: {
-                  background: "rgb(240, 139, 156)",
+                    background: "rgb(240, 139, 156)",
                 },
-              });
+            });
+            return; // Prevent further execution if passwords don't match
         }
 
         setIsSubmitting(true); // Disable button and show "Submitting"
 
         try {
-            const response = await fetch('http://localhost:8000/api/v1/auth/register', {
+            const response = await fetch('https://oss-project-pubm.onrender.com/api/v1/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    organisationUserName: signUpFormData.organisationUserName,
-                    userName: signUpFormData.userName,
-                    email: signUpFormData.email,
-                    password: signUpFormData.password,
-                    confirmPassword: signUpFormData.confirmPassword
-                }),
+                body: JSON.stringify(signUpFormData),
             });
 
             const result = await response.json();
             if (response.ok) {
-                // alert('User registered successfully');
                 toast.success("User Created Successfully", {
                     style: {
-                      background: "rgb(144, 234, 96)",
+                        background: "rgb(144, 234, 96)",
                     },
-                  });
+                });
                 setTimeout(() => {
-                    navigate("/logInPage")
-                }, 2000)
+                    navigate("/logInPage");
+                }, 2000);
 
                 setsignUpFormData({
-                    organisationUserName: '',
+                    organisationName: '',
                     userName: '',
                     email: '',
                     password: '',
                     confirmPassword: '',
-                }
-                )
-                // Reset form or redirect to another page
+                });
             } else {
-                // alert(`Error: ${result.message || 'Something went wrong'}`);
-                toast.error(`${result.message}`, {
+                toast.error(result.message || "Something went wrong", {
                     style: {
-                      background: "rgb(240, 139, 156)",
+                        background: "rgb(240, 139, 156)",
                     },
-                  });
+                });
             }
         } catch (error) {
             console.error('Error during registration:', error);
-            // alert('An error occurred. Please try again later.');
-            toast.error("Oops! something went wrong,  Please try again later", {
+            toast.error("Oops! Something went wrong. Please try again later", {
                 style: {
-                  background: "rgb(240, 139, 156)",
+                    background: "rgb(240, 139, 156)",
                 },
-              });
+            });
         }
 
         setIsSubmitting(false); // Re-enable button after submission
@@ -104,11 +91,11 @@ const SignUpPage = () => {
                     <br />
                     <label>Organisation Username:</label>
                     <input
-                        name="organisationUserName"
-                        value={signUpFormData.organisationUserName}
+                        name="organisationName"
+                        value={signUpFormData.organisationName}
                         onChange={handleInputValueChange}
                         type="text"
-                        placeholder="Organisation Username"
+                        placeholder="Organisation name"
                         required
                     />
                     <br />
@@ -172,7 +159,6 @@ const SignUpPage = () => {
                     </p>
                 </form>
                 <Toaster position="top-center" reverseOrder={false} />
-
             </section>
         </>
     );

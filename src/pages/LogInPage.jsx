@@ -30,7 +30,7 @@ const LogInPage = () => {
         setIsSubmitting(true)
         try{
 
-            const response = await fetch('http://localhost:8000/api/v1/auth/login', {
+            const response = await fetch('https://oss-project-pubm.onrender.com/api/v1/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const LogInPage = () => {
                     <h1>Log In</h1>
                     <br />
                     <label>Email:</label>
-                    <input name='email' value={loginFormData.email} onChange={handleInputValueChange} type="email" placeholder="Email" />
+                    <input name='email' value={loginFormData.email} onChange={handleInputValueChange} type="text" placeholder="Email" />
                     <br />
                     <label>Password:</label>
                     <input type="password" placeholder="password" value={loginFormData.password} name='password' onChange={handleInputValueChange} />
